@@ -27,7 +27,7 @@ export function removeToy(toyId) {
 }
 
 export function saveToy(toy) {
-    const type = toy_id ? UPDATE_TOY : ADD_TOY
+    const type = toy._id ? UPDATE_TOY : ADD_TOY
     return toyService.save(toy)
         .then((savedToy) => {
             store.dispatch({ type, toy: savedToy })
@@ -40,6 +40,6 @@ export function saveToy(toy) {
 
 }
 
-export function setFilterBy(filterBy) {
-    store.dispatch({ type: SET_FILTER_BY, filterBy })
-}
+// export function setFilterBy(filterBy) {
+//     store.dispatch({ type: SET_FILTER_BY, filterBy })
+// }

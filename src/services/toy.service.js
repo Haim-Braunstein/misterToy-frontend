@@ -61,7 +61,7 @@ function _createToys() {
             {
                 _id: utilService.makeId(),
                 name: 'Puzzle',
-                price: 13,
+                price: 15,
                 labels: ['Box game', 'Puzzle', 'Baby'],
                 createdAt: 1631231801011,
                 inStock: Math.random() > 0.5 ? true : false,
