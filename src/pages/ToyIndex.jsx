@@ -5,13 +5,15 @@ import { Link } from "react-router-dom"
 import { showErrorMsg } from "../services/event-bus.service"
 import { loadToys, removeToy, saveToy } from "../store/actions/toy.actions"
 import { toyService } from "../services/toy.service"
+import { ToyList } from "../cmps/ToyList"
 
 
 
 
 export function ToyIndex() {
     const dispatch = useDispatch()
-    const Toys = useSelector(storeState => storeState.toyModule.toys)
+    const toys = useSelector(storeState => storeState.toyModule.toys)
+    console.log("🚀 ~ ToyIndex ~ toys:", toys)
 
     useEffect(() => {
         loadToys()
@@ -31,8 +33,9 @@ export function ToyIndex() {
     }
 
     function onAddToy() {
-        const toyToSave = toyService.getEmptyToy()
-        saveCar(toyToSave)
+        const toyName = prompt('Enter a toy\'s name')
+        const toyToSave = toyService.getEmptyToy(toyName)
+        saveToy(toyToSave)
             .then((savedToy) => {
                 showSuccessMsg(`Toy added (id: ${savedToy._id})`)
             })
@@ -45,7 +48,7 @@ export function ToyIndex() {
         const price = +prompt('New price?')
         const toyToSave = { ...toy, price }
 
-        saveCar(toyToSave)
+        saveToy(toyToSave)
             .then((savedToy) => {
                 showSuccessMsg(`Toy updated to price: ${savedToy.price}`)
             })
@@ -58,9 +61,10 @@ export function ToyIndex() {
     return (
         <div>
             <h3>Toy Kingdom</h3>
-            <main>
-                <Link to="/toy/edit">Add Toy</Link>
+            <Link to="/toy/edit">Add Toy</Link>
                 <button className='add-btn' onClick={onAddToy}>Add Toy</button>
+            <main className="toy-layout">
+              
                 {/* <ToyFilter filterBy={filterBy} onSetFilter={onSetFilter} /> */}
                 <ToyList
                     toys={toys}

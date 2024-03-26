@@ -41,9 +41,9 @@ function save(toy) {
     }
 }
 
-function getEmptyToy() {
+function getEmptyToy(toyName) {
     return {
-        name: '',
+        name: toyName,
         price: 0,
         labels: labels[utilService.getRandomIntInclusive(0, labels.length - 1)],
         createdAt: Date.now(),
