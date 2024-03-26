@@ -9,7 +9,7 @@ export const SET_FILTER_BY = 'SET_FILTER_BY'
 
 const initialState = {
     toys: null,
-    // filterBy:
+    filterBy:{ txt: '', inStock: 'all', maxPrice: 0 }
 }
 
 
@@ -37,7 +37,11 @@ export function toyReducer(state = initialState, action = {}) {
                 ...state,
                 toys: state.toys.map(toy => toy._id === action.toy._id ? action.toy : toy)
             }
-
+            case SET_FILTER_BY:
+            return {
+                ...state,
+                filterBy: { ...state.filterBy, ...action.filterBy }
+            }
 
         default:
             return state

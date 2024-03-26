@@ -4,7 +4,6 @@ import { utilService } from "./util.service.js"
 
 const STORAGE_KEY = 'toyDB'
 _createToys()
-console.log("🚀 ~ _createToys():", _createToys())
 
 const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle',
     'Outdoor', 'Battery Powered']
@@ -18,8 +17,32 @@ export const toyService = {
 }
 
 
-function query() {
+function query(filterBy = { txt: '', inStock: 'all', maxPrice: 0 }) {
     return storageService.query(STORAGE_KEY)
+        .then(toys => {
+            let filteredToys = toys
+            if (filterBy.txt) {
+                console.log("🚀 ~ query ~ filterBy:", filterBy)
+                const regex = new RegExp(filterBy.txt, 'i')
+                filteredToys = filteredToys.filter(toy => regex.test(toy.name))
+            }
+            if (filterBy.inStock !== 'all') {
+                filteredToys = filteredToys.filter(toy => {
+
+                    return filterBy.inStock === 'in-stock' ? toy.inStock : !toy.inStock
+                })
+            }
+
+            if (filterBy.maxPrice) {
+                filterBy.maxPrice = Infinity
+                filteredToys = filteredToys.filter(toy => toy.price <= filterBy.maxPrice)
+
+            }
+
+            return filteredToys
+
+        })
+
 }
 
 function getToyById(id) {
