@@ -1,8 +1,8 @@
-import { combineReducers, compose, legacy_createStore } from "redux"
+import { combineReducers, compose, legacy_createStore as createStore } from "redux"
 import { toyReducer } from "./reducers/toy.reducer"
 
 
-const rootReducers = combineReducers({
+const rootReducer = combineReducers({
     toyModule: toyReducer,
 })
 
