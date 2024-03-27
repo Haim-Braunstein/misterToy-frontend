@@ -3,27 +3,28 @@ import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
 import { showErrorMsg } from "../services/event-bus.service"
-import { loadToys, removeToy, saveToy, setFilterBy } from "../store/actions/toy.actions"
+import { loadToys, removeToy, saveToy, setFilterBy, setSortBy } from "../store/actions/toy.actions"
 import { toyService } from "../services/toy.service"
 import { ToyList } from "../cmps/ToyList"
 import { ToyFilter } from "../cmps/ToyFilter"
-
-
+import { ToySort } from "../cmps/ToySort"
 
 
 export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
-    console.log("🚀 ~ ToyIndex ~ filterBy:", filterBy)
+    const sortBy = useSelector(state => state.toyModule.sortBy)
+    console.log("🚀 ~ ToyInde11x ~ sortBy:", sortBy)
+
 
 
     useEffect(() => {
-        loadToys()
+        loadToys(filterBy, sortBy)
             .catch(err => {
                 showErrorMsg('cannot load toys')
             })
-    }, [filterBy])
+    }, [filterBy, sortBy])
 
     function onRemoveToy(toyId) {
         removeToy(toyId)
@@ -38,6 +39,11 @@ export function ToyIndex() {
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
 
+    }
+
+    function onSetSort(sort) {
+        console.log("🚀 ~ onSetssssSort ~ sort:", sort)
+        setSortBy(sort)
     }
 
     function onAddToy() {
@@ -75,6 +81,9 @@ export function ToyIndex() {
                 <ToyFilter
                     filterBy={filterBy}
                     onSetFilter={onSetFilter} />
+                <ToySort sortBy={sortBy} onSetSort={onSetSort} />
+                {console.log("🚀 ~ ToyIndsassassex ~ sortBy:", sortBy)}
+
                 <ToyList
                     toys={toys}
                     onRemoveToy={onRemoveToy}

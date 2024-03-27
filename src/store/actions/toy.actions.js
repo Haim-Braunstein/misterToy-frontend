@@ -1,13 +1,14 @@
-import { showErrorMsg, showSuccessMsg } from "../../services/event-bus.service"
 import { toyService } from "../../services/toy.service"
-import { ADD_TOY, REMOVE_TOY, SET_FILTER_BY, SET_TOYS, UPDATE_TOY } from "../reducers/toy.reducer"
+import { ADD_TOY, REMOVE_TOY, SET_FILTER_BY, SET_SORT_BY, SET_TOYS, UPDATE_TOY } from "../reducers/toy.reducer"
 import { store } from "../store"
 
 
-export function loadToys() {
-    const filterBy = store.getState().toyModule.filterBy
+export function loadToys(filterBy, sort) {
+    // const filterBy = store.getState().toyModule.filterBy
 
-    return toyService.query(filterBy).then(toys => {
+    return toyService.query(filterBy, sort).then(toys => {
+    console.log("🚀 ~ returntoyService.query ~ toys:", toys)
+
         store.dispatch({ type: SET_TOYS, toys })
     })
         .catch(err => {
@@ -43,4 +44,8 @@ export function saveToy(toy) {
 
 export function setFilterBy(filterBy) {
     store.dispatch({ type: SET_FILTER_BY, filterBy })
+}
+
+export function setSortBy(sortBy) {
+    store.dispatch({ type: SET_SORT_BY, sortBy })
 }
