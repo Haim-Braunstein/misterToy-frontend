@@ -76,7 +76,7 @@ export function Dashboard() {
             },
             title: {
                 display: true,
-                text: 'Toys price per label',
+                text: 'Toys in stock per label',
                 font: {
                     size: 25
                 },

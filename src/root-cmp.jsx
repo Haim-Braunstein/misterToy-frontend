@@ -4,10 +4,12 @@ import '../src/assets/style/main.css'
 
 import { ToyIndex } from './pages/ToyIndex'
 import { HomePage } from './pages/HomePage'
-import { AppHeader } from './cmps/AppHeader'
-import { store } from './store/store'
 import { ToyDetails } from './pages/ToyDetails'
 import { Dashboard } from './pages/Dashboard'
+import { About } from './pages/About'
+
+import { AppHeader } from './cmps/AppHeader'
+import { store } from './store/store'
 
 
 export function App() {
@@ -22,6 +24,7 @@ export function App() {
 
             <Routes>
               <Route element={<HomePage />} path='/' />
+              <Route element={<About />} path='/about' />
               <Route element={<ToyIndex />} path='/toy' />
               <Route element={<Dashboard />} path='/toy/dashboard' />
               <Route element={<ToyDetails />} path={'/toy/:id'} />
