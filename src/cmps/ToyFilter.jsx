@@ -4,7 +4,6 @@ import { utilService } from "../services/util.service"
 
 export function ToyFilter({ onSetFilter, filterBy }) {
     const [filterByToEdit, setFilterByToEdit] = useState({ ...filterBy })
-    console.log("🚀 ~ ToyFilter ~ filterByToEdit:", filterByToEdit)
     const debouncedSetFilterRef = useRef(utilService.debounce(onSetFilter, 300))
 
     useEffect(() => {

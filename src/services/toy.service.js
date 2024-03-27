@@ -22,7 +22,6 @@ function query(filterBy = { txt: '', inStock: 'all', maxPrice: 0 }) {
         .then(toys => {
             let filteredToys = toys
             if (filterBy.txt) {
-                console.log("🚀 ~ query ~ filterBy:", filterBy)
                 const regex = new RegExp(filterBy.txt, 'i')
                 filteredToys = filteredToys.filter(toy => regex.test(toy.name))
             }
@@ -33,10 +32,8 @@ function query(filterBy = { txt: '', inStock: 'all', maxPrice: 0 }) {
                 })
             }
 
-            if (filterBy.maxPrice) {
-                filterBy.maxPrice = Infinity
+            if (filterBy.maxPrice !== 0) {
                 filteredToys = filteredToys.filter(toy => toy.price <= filterBy.maxPrice)
-
             }
 
             return filteredToys
