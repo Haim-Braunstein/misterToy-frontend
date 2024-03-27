@@ -13,9 +13,9 @@ import { ToySort } from "../cmps/ToySort"
 export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
+    console.log("🚀 ~ ToyIndex ~ toys:", toys)
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const sortBy = useSelector(state => state.toyModule.sortBy)
-    console.log("🚀 ~ ToyInde11x ~ sortBy:", sortBy)
 
 
 
@@ -42,7 +42,6 @@ export function ToyIndex() {
     }
 
     function onSetSort(sort) {
-        console.log("🚀 ~ onSetssssSort ~ sort:", sort)
         setSortBy(sort)
     }
 
@@ -82,8 +81,6 @@ export function ToyIndex() {
                     filterBy={filterBy}
                     onSetFilter={onSetFilter} />
                 <ToySort sortBy={sortBy} onSetSort={onSetSort} />
-                {console.log("🚀 ~ ToyIndsassassex ~ sortBy:", sortBy)}
-
                 <ToyList
                     toys={toys}
                     onRemoveToy={onRemoveToy}

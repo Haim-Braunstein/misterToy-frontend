@@ -4,10 +4,8 @@ import { store } from "../store"
 
 
 export function loadToys(filterBy, sort) {
-    // const filterBy = store.getState().toyModule.filterBy
 
     return toyService.query(filterBy, sort).then(toys => {
-    console.log("🚀 ~ returntoyService.query ~ toys:", toys)
 
         store.dispatch({ type: SET_TOYS, toys })
     })
