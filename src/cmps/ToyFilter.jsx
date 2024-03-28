@@ -9,6 +9,7 @@ export function ToyFilter({ onSetFilter, filterBy }) {
     useEffect(() => {
         debouncedSetFilterRef.current(filterByToEdit)
     }, [filterByToEdit])
+    console.log("🚀 ~ ToyFilter ~ filterByToEdit:", filterByToEdit)
 
     function handleChange({ target }) {
         let { value, name: field, type } = target

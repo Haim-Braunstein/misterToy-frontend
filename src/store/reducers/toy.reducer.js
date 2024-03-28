@@ -10,7 +10,7 @@ export const SET_FILTER_BY = 'SET_FILTER_BY'
 
 const initialState = {
     toys: null,
-    filterBy: { txt: '', inStock: 'all', maxPrice: 0 },
+    filterBy: { txt: '', inStock: 'all', maxPrice: null },
     sortBy: { by: 'name', asc: true }
 }
 

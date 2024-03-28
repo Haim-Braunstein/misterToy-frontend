@@ -6,7 +6,6 @@ import { store } from "../store"
 export function loadToys(filterBy, sort) {
 
     return toyService.query(filterBy, sort).then(toys => {
-
         store.dispatch({ type: SET_TOYS, toys })
     })
         .catch(err => {
