@@ -1,4 +1,5 @@
 import { httpService } from './http.service'
+import { utilService } from './util.service'
 
 const BASE_URL = 'auth/'
 const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
@@ -9,8 +10,8 @@ export const userService = {
     signup,
     getById,
     getLoggedinUser,
-    // updateScore,
-    getEmptyCredentials
+    getEmptyCredentials,
+    addToyMsg
 }
 
 
@@ -40,17 +41,6 @@ function logout() {
         })
 }
 
-
-// function updateScore(diff) {
-//     if (getLoggedinUser().score + diff < 0) return Promise.reject('No credit')
-//     return httpService.put('/user', { diff })
-//         .then(user => {
-//             _setLoggedinUser(user)
-//             return user.score
-//         })
-// }
-
-
 function getById(userId) {
     return httpService.get('user/' + userId)
 }
@@ -74,6 +64,36 @@ function getEmptyCredentials() {
         fullname: ''
     }
 }
+
+async function addToyMsg(txt, toyId) {
+    const loggedinUser = getLoggedinUser()
+
+    if (!loggedinUser) return;
+
+    const msg = {
+        id: utilService.makeId(),
+        txt: txt,
+        by: {
+            _id: loggedinUser._id,
+            fullname: loggedinUser.fullname
+        }
+    }
+
+    try {
+        const user = await getById(loggedinUser._id)
+
+        if (!user.msgs) user.msgs = []
+        user.msgs.unshift(msg);
+
+        const savedUser = await httpService.put('toy/' + toyId + '/msg', user)
+        _setLoggedinUser(savedUser);
+        return savedUser;
+    } catch (error) {
+        console.error('Failed to add toy message:', error)
+        throw error
+    }
+}
+
 
 
 

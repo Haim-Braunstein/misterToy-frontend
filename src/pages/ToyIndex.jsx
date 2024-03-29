@@ -13,7 +13,9 @@ import { ToySort } from "../cmps/ToySort"
 export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
-    console.log("🚀 ~ ToyIndex ~ toys:", toys)
+    const user = useSelector(storeState => storeState.userModule.loggedInUser)
+    console.log("🚀 ~ file: ToyIndex.jsx:17 ~ ToyIndex ~ user:", user)
+
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const sortBy = useSelector(state => state.toyModule.sortBy)
 
@@ -74,21 +76,28 @@ export function ToyIndex() {
     return (
         <div>
             <h3>Toy Kingdom</h3>
-            <Link to="/toy/edit">Add Toy</Link>
-            <button className='add-btn' onClick={onAddToy}>Add Toy</button>
-            <main className="toy-layout">
-                <ToyFilter
-                    filterBy={filterBy}
-                    onSetFilter={onSetFilter} />
-                <ToySort sortBy={sortBy} onSetSort={onSetSort} />
-                <ToyList
-                    toys={toys}
-                    onRemoveToy={onRemoveToy}
-                    onEditToy={onEditToy}
-                />
-                <hr />
-            </main>
-        </div>
-    )
+            {/* {user && user.isAdmin ? ( */}
 
-}
+                <>
+                <Link to="/toy/edit">Add Toy</Link>
+                <button className='add-btn' onClick={onAddToy}>Add Toy</button>
+            </>
+    {/* ) : ( */}
+        <main className="toy-layout">
+            <ToyFilter
+                filterBy={filterBy}
+                onSetFilter={onSetFilter} />
+            <ToySort sortBy={sortBy} onSetSort={onSetSort} />
+            <ToyList
+                toys={toys}
+                onRemoveToy={onRemoveToy}
+                onEditToy={onEditToy}
+            />
+            <hr />
+        </main>
+    {/* ) */}
+{/* } */}
+    </div >
+   ) }
+
+
