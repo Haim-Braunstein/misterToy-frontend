@@ -7,13 +7,13 @@ export const toyService = {
     save,
     getEmptyToy,
     getDefaultSort,
-    getLabels
+    getLabels,
+    AddToyMsg,
 }
 
 const labels = ["On wheels", "Box game", "Art", "Baby", "Doll", "Puzzle", "Outdoor", "Battery Powered"]
 
 function query(filterBy, sortBy) {
-    console.log("🚀 ~ query ~ filterBy:", filterBy)
     return httpService.get('toy', { params: { filterBy, sortBy } })
 }
 
@@ -21,7 +21,7 @@ function getLabels() {
     return [...labels]
 }
 
-function getToyById(toyId) {    
+function getToyById(toyId) {
     return httpService.get(`toy/${toyId}`)
 }
 
@@ -36,6 +36,12 @@ function save(toy) {
         return httpService.post('toy', toy)
     }
 }
+
+function AddToyMsg(toyId, msg) {
+
+    return httpService.post(`toy/${toyId}/msg`, { data: msg });
+}
+
 
 function getEmptyToy(toyName) {
     return {

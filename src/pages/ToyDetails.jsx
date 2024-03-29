@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom"
 import { toyService } from "../services/toy.service"
 import { showErrorMsg } from "../services/event-bus.service"
 
-
 export function ToyDetails() {
     const params = useParams()
     const navigate = useNavigate()
@@ -20,6 +19,11 @@ export function ToyDetails() {
                 showErrorMsg('Had issues loading toy');
             })
     }, [])
+
+    function onAddMsg(toyId) {
+        const txt = prompt('Enter a msg')
+        toyService.AddToyMsg(toyId, txt)
+    }
 
 
     if (!currToy) return <h4>loading...</h4>
@@ -39,6 +43,7 @@ export function ToyDetails() {
                     ))}
                 </ul>
                 <h2>Id: {_id}</h2>
+                <button onClick={() => { onAddMsg(_id) }}>Add msg</button>
 
                 <button className="back-btn" onClick={() => navigate('/toy')}>
                     Back to toy's list

@@ -11,7 +11,6 @@ export const userService = {
     getById,
     getLoggedinUser,
     getEmptyCredentials,
-    addToyMsg
 }
 
 
@@ -64,36 +63,6 @@ function getEmptyCredentials() {
         fullname: ''
     }
 }
-
-async function addToyMsg(txt, toyId) {
-    const loggedinUser = getLoggedinUser()
-
-    if (!loggedinUser) return;
-
-    const msg = {
-        id: utilService.makeId(),
-        txt: txt,
-        by: {
-            _id: loggedinUser._id,
-            fullname: loggedinUser.fullname
-        }
-    }
-
-    try {
-        const user = await getById(loggedinUser._id)
-
-        if (!user.msgs) user.msgs = []
-        user.msgs.unshift(msg);
-
-        const savedUser = await httpService.put('toy/' + toyId + '/msg', user)
-        _setLoggedinUser(savedUser);
-        return savedUser;
-    } catch (error) {
-        console.error('Failed to add toy message:', error)
-        throw error
-    }
-}
-
 
 
 
