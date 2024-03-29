@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { toyService } from "../services/toy.service"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
+
 
 export function ToyDetails() {
     const params = useParams()
@@ -78,7 +79,7 @@ export function ToyDetails() {
                         ))}
                     </div>
                 )}
-
+                  <Link to={`/toy/edit/${_id}`}>Edit</Link>
                 <button className="back-btn" onClick={() => navigate('/toy')}>
                     Back to toy's list
                 </button>
