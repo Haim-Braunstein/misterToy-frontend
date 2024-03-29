@@ -35,6 +35,17 @@ export function ToyDetails() {
         }
     }
 
+    async function onRemoveToyMsg(toyId, msgId) {
+        try {
+            await toyService.RemoveToyMsg(toyId, msgId)
+            setMsgsToy(prevMsgs => [...prevMsgs, toyId])
+        } catch (error) {
+            console.error('Failed to remove toy message:', error)
+            showErrorMsg('Failed to remove toy message')
+        }
+
+    }
+
     if (!currToy) return <h4>loading...</h4>
     const { _id, name, price, labels, inStock, createdAt, msgs } = currToy
     const formattedDate = new Date(createdAt).toLocaleString('he')
@@ -59,7 +70,9 @@ export function ToyDetails() {
                         {msgs.map(msg => (
                             <div key={msg.id}>
                                 <p> {msg.by.fullname}: {msg.txt}</p>
+                                <button onClick={() => { onRemoveToyMsg(_id, msg.id) }}>X</button>
                             </div>
+
                         ))}
                     </div>
                 )}

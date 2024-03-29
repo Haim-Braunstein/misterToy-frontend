@@ -45,7 +45,7 @@ function AddToyMsg(toyId, msg) {
 
 function RemoveToyMsg(toyId, msgId) {
 
-    return httpService.delete(`toy/${toyId}/${msgId}`)
+    return httpService.delete(`toy/${toyId}/msg/${msgId}`)
 }
 
 
