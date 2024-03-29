@@ -7,6 +7,8 @@ export function ToyDetails() {
     const params = useParams()
     const navigate = useNavigate()
     const [currToy, setCurrToy] = useState(null)
+    const [msgsToy, setMsgsToy] = useState([])
+
 
     useEffect(() => {
         const { id } = params
@@ -16,18 +18,25 @@ export function ToyDetails() {
                 setCurrToy(toy)
             })
             .catch(() => {
-                showErrorMsg('Had issues loading toy');
+                showErrorMsg('Had issues loading toy')
             })
-    }, [])
+    }, [msgsToy])
 
-    function onAddMsg(toyId) {
+    async function onAddMsg(toyId) {
         const txt = prompt('Enter a msg')
-        toyService.AddToyMsg(toyId, txt)
+        if (txt) {
+            try {
+                await toyService.AddToyMsg(toyId, txt)
+                setMsgsToy(prevMsgs => [...prevMsgs, txt])
+            } catch (error) {
+                console.error('Failed to add toy message:', error)
+                showErrorMsg('Failed to add toy message')
+            }
+        }
     }
 
-
     if (!currToy) return <h4>loading...</h4>
-    const { _id, name, price, labels, inStock, createdAt } = currToy
+    const { _id, name, price, labels, inStock, createdAt, msgs } = currToy
     const formattedDate = new Date(createdAt).toLocaleString('he')
     return (
         <div className="toy-details flex ">
@@ -44,6 +53,16 @@ export function ToyDetails() {
                 </ul>
                 <h2>Id: {_id}</h2>
                 <button onClick={() => { onAddMsg(_id) }}>Add msg</button>
+
+                {msgs && (
+                    <div>
+                        {msgs.map(msg => (
+                            <div key={msg.id}>
+                                <p> {msg.by.fullname}: {msg.txt}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
 
                 <button className="back-btn" onClick={() => navigate('/toy')}>
                     Back to toy's list
