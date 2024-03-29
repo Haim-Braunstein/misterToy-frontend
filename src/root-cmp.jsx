@@ -10,6 +10,7 @@ import { About } from './pages/About'
 
 import { AppHeader } from './cmps/AppHeader'
 import { store } from './store/store'
+import { UserMsg } from './cmps/UserMsg'
 
 
 export function App() {
@@ -34,6 +35,7 @@ export function App() {
           </main>
 
         </section>
+        <UserMsg/>
       </Router>
     </Provider>
   )

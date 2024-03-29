@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { toyService } from "../services/toy.service"
-import { showErrorMsg } from "../services/event-bus.service"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 
 export function ToyDetails() {
     const params = useParams()
@@ -28,6 +28,7 @@ export function ToyDetails() {
             try {
                 await toyService.AddToyMsg(toyId, txt)
                 setMsgsToy(prevMsgs => [...prevMsgs, txt])
+                showSuccessMsg('Added message successfully ')
             } catch (error) {
                 console.error('Failed to add toy message:', error)
                 showErrorMsg('Failed to add toy message')
@@ -39,6 +40,7 @@ export function ToyDetails() {
         try {
             await toyService.RemoveToyMsg(toyId, msgId)
             setMsgsToy(prevMsgs => [...prevMsgs, toyId])
+            showSuccessMsg('Removed message successfully ')
         } catch (error) {
             console.error('Failed to remove toy message:', error)
             showErrorMsg('Failed to remove toy message')

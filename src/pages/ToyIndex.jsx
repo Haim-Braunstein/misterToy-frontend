@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom"
 
-import { showErrorMsg } from "../services/event-bus.service"
+import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { loadToys, removeToy, saveToy, setFilterBy, setSortBy } from "../store/actions/toy.actions"
 import { toyService } from "../services/toy.service"
 import { ToyList } from "../cmps/ToyList"
@@ -14,12 +14,9 @@ export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const user = useSelector(storeState => storeState.userModule.loggedInUser)
-    console.log("🚀 ~ file: ToyIndex.jsx:17 ~ ToyIndex ~ user:", user)
 
     const filterBy = useSelector(storeState => storeState.toyModule.filterBy)
     const sortBy = useSelector(state => state.toyModule.sortBy)
-
-
 
     useEffect(() => {
         loadToys(filterBy, sortBy)
@@ -47,29 +44,28 @@ export function ToyIndex() {
         setSortBy(sort)
     }
 
-    function onAddToy() {
-        const toyName = prompt('Enter a toy\'s name')
+    async function onAddToy() {
+        const toyName = prompt("Enter a toy's name")
         const toyToSave = toyService.getEmptyToy(toyName)
-        saveToy(toyToSave)
-            .then((savedToy) => {
-                showSuccessMsg(`Toy added (id: ${savedToy._id})`)
-            })
-            .catch(err => {
-                showErrorMsg('Cannot add toy')
-            })
+        
+        try {
+            const savedToy = await saveToy(toyToSave)
+            showSuccessMsg(`Toy added (id: ${savedToy._id})`)
+        } catch (err) {
+            showErrorMsg('Cannot add toy')
+        }
     }
 
-    function onEditToy(toy) {
+    async function onEditToy(toy) {
         const price = +prompt('New price?')
         const toyToSave = { ...toy, price }
-
-        saveToy(toyToSave)
-            .then((savedToy) => {
-                showSuccessMsg(`Toy updated to price: ${savedToy.price}`)
-            })
-            .catch(err => {
-                showErrorMsg('Cannot update toy')
-            })
+    
+        try {
+            const savedToy = await saveToy(toyToSave)
+            showSuccessMsg(`Toy updated to price: ${savedToy.price}`)
+        } catch (err) {
+            showErrorMsg('Cannot update toy')
+        }
     }
 
     if (!toys) return <h2>loading...</h2>
