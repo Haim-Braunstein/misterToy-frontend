@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { toyService } from "../services/toy.service"
 import { saveToy } from "../store/actions/toy.actions"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
+import { LabelsSelect } from "../cmps/LabelsSelect"
 
 export function ToyEdit() {
     const [toyToEdit, setToyToEdit] = useState(toyService.getEmptyToy())
@@ -76,7 +77,7 @@ export function ToyEdit() {
                 </label>
             </div>
             <div>
-                {/* <MultiSelect onSetLabel={onSetLabel} toyToEdit={toyToEdit} /> */}
+                <LabelsSelect onSetLabel={onSetLabel} toyToEdit={toyToEdit} />
               
             </div>
             <div>
