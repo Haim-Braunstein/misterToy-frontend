@@ -9,6 +9,7 @@ export const toyService = {
     getDefaultSort,
     getLabels,
     AddToyMsg,
+    RemoveToyMsg,
 }
 
 const labels = ["On wheels", "Box game", "Art", "Baby", "Doll", "Puzzle", "Outdoor", "Battery Powered"]
@@ -40,6 +41,11 @@ function save(toy) {
 function AddToyMsg(toyId, msg) {
 
     return httpService.post(`toy/${toyId}/msg`, { data: msg });
+}
+
+function RemoveToyMsg(toyId, msgId) {
+
+    return httpService.delete(`toy/${toyId}/${msgId}`)
 }
 
 
