@@ -49,11 +49,11 @@ function RemoveToyMsg(toyId, msgId) {
 }
 
 
-function getEmptyToy(toyName) {
+function getEmptyToy() {
     return {
-        name: toyName,
-        price: 0,
-        labels: labels[utilService.getRandomIntInclusive(0, labels.length - 1)],
+        name: '',
+        price: '',
+        labels: [],
         createdAt: Date.now(),
         inStock: Math.random() > 0.5 ? true : false,
     }

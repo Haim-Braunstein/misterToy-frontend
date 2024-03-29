@@ -1,6 +1,5 @@
 
 export function ToySort({ sortBy, onSetSort }) {
-console.log("🚀 ~ ToySort ~ sortBy:", sortBy)
 
     function handleSortChange(by) {
         const updatedSort = { ...sortBy, by }

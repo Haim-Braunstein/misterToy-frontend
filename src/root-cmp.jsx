@@ -11,6 +11,7 @@ import { About } from './pages/About'
 import { AppHeader } from './cmps/AppHeader'
 import { store } from './store/store'
 import { UserMsg } from './cmps/UserMsg'
+import { ToyEdit } from './pages/ToyEdit'
 
 
 export function App() {
@@ -26,6 +27,7 @@ export function App() {
             <Routes>
               <Route element={<HomePage />} path='/' />
               <Route element={<About />} path='/about' />
+              <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
               <Route element={<ToyIndex />} path='/toy' />
               <Route element={<Dashboard />} path='/toy/dashboard' />
               <Route element={<ToyDetails />} path={'/toy/:id'} />

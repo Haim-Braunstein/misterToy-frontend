@@ -25,35 +25,21 @@ export function ToyIndex() {
             })
     }, [filterBy, sortBy])
 
-    function onRemoveToy(toyId) {
-        removeToy(toyId)
-            .then(() => {
-                showSuccessMsg('Toy removed')
-            })
-            .catch(err => {
-                showErrorMsg('Cannot remove toy')
-            })
+    async function onRemoveToy(toyId) {
+        try {
+            await removeToy(toyId)
+            showSuccessMsg('Toy removed')
+        } catch (err) {
+            showErrorMsg('Cannot remove toy')
+        }
     }
 
     function onSetFilter(filterBy) {
         setFilterBy(filterBy)
-
     }
 
     function onSetSort(sort) {
         setSortBy(sort)
-    }
-
-    async function onAddToy() {
-        const toyName = prompt("Enter a toy's name")
-        const toyToSave = toyService.getEmptyToy(toyName)
-        
-        try {
-            const savedToy = await saveToy(toyToSave)
-            showSuccessMsg(`Toy added (id: ${savedToy._id})`)
-        } catch (err) {
-            showErrorMsg('Cannot add toy')
-        }
     }
 
     async function onEditToy(toy) {
@@ -76,7 +62,6 @@ export function ToyIndex() {
 
                 <>
                 <Link to="/toy/edit">Add Toy</Link>
-                <button className='add-btn' onClick={onAddToy}>Add Toy</button>
             </>
     {/* ) : ( */}
         <main className="toy-layout">
