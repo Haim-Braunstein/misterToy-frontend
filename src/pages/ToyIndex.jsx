@@ -10,6 +10,7 @@ import { ToyFilter } from "../cmps/ToyFilter"
 import { ToySort } from "../cmps/ToySort"
 
 
+
 export function ToyIndex() {
     const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)

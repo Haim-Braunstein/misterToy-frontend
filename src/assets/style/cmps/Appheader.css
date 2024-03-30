@@ -1,0 +1,44 @@
+/* Header styles */
+.app-header {
+    background-color:#a2d5c6;
+    color: #fff;
+    padding: 0.625em;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  .app-header .header-container {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .app-header h1 {
+    margin: 0;
+  }
+  
+  .app-header .app-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 0.625em;
+  }
+  
+  .app-header .login-user {
+    align-items: center;
+  }
+  
+  .app-header .login-user span {
+    margin-right: 0.625em;
+  }
+  
+  .app-header .login-user button {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 0.313em;
+    cursor: pointer;
+  }
+  
+  .app-header .login-user button:hover {
+    background-color: #ddd;
+  }
+  

@@ -17,7 +17,7 @@ export function LabelsSelect({ onSetLabel, toyToEdit }) {
 
         <div className={`options-container  ${isOptionsModalOpen ? ' open' : ''}`}>
             {labels.map(label => <div onClick={() => onSetLabel(label)} key={label}>
-                {label} {toyToEdit.labels?.includes(label) ? '🟢' : ''}
+                {label} {toyToEdit.labels?.includes(label) ? '✔' : ''}
             </div>
             )}
         </div>

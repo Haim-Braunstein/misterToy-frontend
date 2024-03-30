@@ -1,0 +1,33 @@
+/* Header styles */
+
+
+  .login-layout {
+    display: flex; 
+    align-items: center; 
+  }
+  
+ 
+  .login-form {
+    background-color: #f5f5f5; 
+    border-radius: 0.313em; 
+  }
+  
+  .login-form input {
+    margin-bottom: 0.625em; 
+    border: none; 
+    border-radius: 0.313em;
+  }
+  
+  .login-form button {
+    padding: 0.625em; 
+    background-color: #6fb4e1; 
+    color: #fff; 
+    border: none; 
+    border-radius: 0.313em; 
+    cursor: pointer; 
+  }
+  
+  .login-form button:hover {
+    background-color: #5a9bcf; 
+  }
+  
