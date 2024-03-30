@@ -11,10 +11,12 @@ export function ToyPreview({ toy, onRemoveToy }) {
             <h3>{toy.name}</h3>
             <div className="toy-info">
                 <p>Price: <span>${toy.price.toLocaleString()}</span></p>
+                <img src={`https://robohash.org/${toy.name}?set=set2`} alt="" />
+
                 <h4>{`${toy.inStock ? 'In Stock' : 'Out of stock'}`}</h4>
             </div>
             <div className="actions-btns flex">
-                <Link to={`/toy/edit/${toy._id}`}className="edit-link" >Edit</Link> &nbsp; | &nbsp;
+                <Link to={`/toy/edit/${toy._id}`} className="edit-link" >Edit</Link> &nbsp; | &nbsp;
                 <Link to={`/toy/${toy._id}`} className="details-link">Details</Link>
                 <button className="remove-btn btn" onClick={() => { onRemoveToy(toy._id) }}>X</button>
             </div>
