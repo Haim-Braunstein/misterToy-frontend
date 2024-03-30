@@ -51,7 +51,7 @@ export function ToyIndex() {
                 <Link to="/toy/edit">Add Toy</Link>
             </>
             {/* ) : ( */}
-            <main className="toy-layout">
+            <main className="toy-layout flex">
                 <ToyFilter
                     filterBy={filterBy}
                     onSetFilter={onSetFilter} />

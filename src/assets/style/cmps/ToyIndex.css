@@ -1,6 +1,6 @@
 .toy-layout{
-    display: flex;
     flex-wrap: wrap;
     gap: 20px; 
+    background-color:  var(--primary-2);
 }
 
