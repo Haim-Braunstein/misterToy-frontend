@@ -6,6 +6,7 @@
   body {
     margin: 0;
     font-size: 1rem;
+    font-family: sans-serif;
   }
   
   h1,
@@ -20,4 +21,12 @@
   img {
     width: 100%;
   }
-  
+
+  .img-container {
+
+    background-size:cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+   } 
+
+   
