@@ -47,11 +47,9 @@ export function ToyIndex() {
     return (
         <div>
             {/* {user && user.isAdmin ? ( */}
-            <>
-                <Link to="/toy/edit">Add Toy</Link>
-            </>
             {/* ) : ( */}
             <main className="toy-layout flex">
+                <Link to="/toy/edit">Add Toy</Link>
                 <ToyFilter
                     filterBy={filterBy}
                     onSetFilter={onSetFilter} />
@@ -60,10 +58,10 @@ export function ToyIndex() {
                     toys={toys}
                     onRemoveToy={onRemoveToy}
                 />
-                <hr />
             </main>
             {/* ) */}
             {/* } */}
+            {(!toys.length) && <div className="no-toys">No toys to show...</div>}
         </div >
     )
 }

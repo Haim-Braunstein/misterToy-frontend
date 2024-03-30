@@ -18,7 +18,6 @@ export function ToyFilter({ onSetFilter, filterBy }) {
         })
     }
 
-
     return (
         <section className="toy-filter">
             <form>

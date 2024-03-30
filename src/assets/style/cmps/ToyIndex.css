@@ -4,3 +4,8 @@
     background-color:  var(--primary-2);
 }
 
+.no-toys{
+    text-align: center;
+    font-weight: bold;
+    color:var(--primary-1);
+}

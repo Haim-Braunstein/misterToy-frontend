@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom"
 import { LoginSignup } from "./LoginSignup"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
+import { Home } from "@mui/icons-material"
 
 
 export function AppHeader() {
