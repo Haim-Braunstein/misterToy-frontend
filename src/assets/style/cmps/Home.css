@@ -1,14 +1,14 @@
 .img-container {
     position: relative;
     width: 100%;
-    height: 100vh; 
-   overflow-x: hidden;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .home-img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .welcome-words {
@@ -19,17 +19,17 @@
     text-align: center;
     color: white;
     z-index: 1;
-    padding: 2em; 
-    background-color: rgba(0, 0, 0, 0.7); 
-    border-radius: 1em; 
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1em;
 }
 
 .welcome-words h1 {
-    font-size: 2.5em; 
-    margin-bottom: 1em; 
+    font-size: 2.5em;
+    margin-bottom: 1em;
 }
 
 .welcome-words p {
-    font-size: 1.2em; 
+    font-size: 1.2em;
     line-height: 1.5;
 }
