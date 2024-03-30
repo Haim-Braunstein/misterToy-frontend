@@ -8,6 +8,7 @@ export function ToyDetails() {
     const navigate = useNavigate()
     const [currToy, setCurrToy] = useState(null)
     const [msgsToy, setMsgsToy] = useState([])
+    const [inputMsg, setInputMsg] = useState('');
 
 
     useEffect(() => {
@@ -23,19 +24,18 @@ export function ToyDetails() {
     }, [msgsToy])
 
     async function onAddMsg(toyId) {
-        const txt = prompt('Enter a msg')
-        if (txt) {
+        if (inputMsg !== '') {
             try {
-                await toyService.AddToyMsg(toyId, txt)
-                setMsgsToy(prevMsgs => [...prevMsgs, txt])
+                await toyService.AddToyMsg(toyId, inputMsg)
+                setMsgsToy(prevMsgs => [...prevMsgs, inputMsg])
                 showSuccessMsg('Added message successfully ')
+                setInputMsg('')
             } catch (error) {
                 console.error('Failed to add toy message:', error)
                 showErrorMsg('Failed to add toy message')
             }
         }
     }
-
     async function onRemoveToyMsg(toyId, msgId) {
         try {
             await toyService.RemoveToyMsg(toyId, msgId)
@@ -47,6 +47,12 @@ export function ToyDetails() {
         }
 
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        onAddMsg(_id)
+    }
+
 
     if (!currToy) return <h4>loading...</h4>
     const { _id, name, price, labels, inStock, createdAt, msgs } = currToy
@@ -66,21 +72,32 @@ export function ToyDetails() {
                     ))}
                 </ul>
                 <h2>Id: {_id}</h2>
-                <button onClick={() => { onAddMsg(_id) }}>Add msg</button>
+                {/* <button onClick={() => { onAddMsg(_id) }}>Add msg</button> */}
+                <div className="msg-input">
+                    <form onSubmit={handleSubmit}>
+                        <input
+                            className="msg-input"
+                            placeholder="Enter a message"
+                            name="txt"
+                            value={inputMsg}
+                            onChange={(ev) => setInputMsg(ev.target.value)}
+                        />
+                    </form>
+                </div>
 
                 {msgs && (
                     <div>
+                        <h3>User message</h3>
                         {msgs.map(msg => (
-                            <div key={msg.id}>
-                                <p> {msg.by.fullname}: {msg.txt}</p>
-                                <button onClick={() => { onRemoveToyMsg(_id, msg.id) }}>X</button>
+                            <div className="msg-container" key={msg.id}>
+                                <p className=""> {msg.by.fullname}: {msg.txt}</p>
+                                <button className="remove-msg-btn btn" onClick={() => { onRemoveToyMsg(_id, msg.id) }}>X</button>
                             </div>
-
                         ))}
                     </div>
                 )}
 
-                <Link to={`/toy/edit/${_id}`}>Edit</Link>
+                <Link className="edit-toy-details" to={`/toy/edit/${_id}`}>Edit</Link>
                 <button className="back-btn" onClick={() => navigate('/toy')}>
                     Back to toy's list
                 </button>

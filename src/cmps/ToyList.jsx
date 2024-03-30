@@ -9,7 +9,7 @@ export function ToyList({ toys, onRemoveToy }) {
 
     return (
         <section>
-            <ul className="toy-list">
+            <ul className="toy-list flex">
                 {
                     toys.map(toy => (
                         <li className=" clean-list" key={toy._id}>

@@ -8,7 +8,7 @@ import { Button, IconButton } from "@mui/material"
 export function ToyPreview({ toy, onRemoveToy }) {
     return (
         <article className=" toy-preview ">
-            <h3>{toy.name}</h3>
+            <h3 className="toy-name">{toy.name}</h3>
             <div className="toy-info">
                 <p>Price: <span>${toy.price.toLocaleString()}</span></p>
                 <img src={`https://robohash.org/${toy.name}?set=set2`} alt="" />
