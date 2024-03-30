@@ -12,7 +12,6 @@ import { ToySort } from "../cmps/ToySort"
 
 
 export function ToyIndex() {
-    const dispatch = useDispatch()
     const toys = useSelector(storeState => storeState.toyModule.toys)
     const user = useSelector(storeState => storeState.userModule.loggedInUser)
 
@@ -49,7 +48,9 @@ export function ToyIndex() {
             {/* {user && user.isAdmin ? ( */}
             {/* ) : ( */}
             <main className="toy-layout flex">
-                <Link to="/toy/edit">Add Toy</Link>
+                <Link to="/toy/edit"><img className="add-toy" src="img/add-toy.png" alt="toy-img" title="add a toy" />
+
+                </Link>
                 <ToyFilter
                     filterBy={filterBy}
                     onSetFilter={onSetFilter} />
