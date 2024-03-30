@@ -47,25 +47,25 @@ export function ToyIndex() {
     return (
         <div>
             {/* {user && user.isAdmin ? ( */}
-
-                <>
+            <>
                 <Link to="/toy/edit">Add Toy</Link>
             </>
-    {/* ) : ( */}
-        <main className="toy-layout">
-            <ToyFilter
-                filterBy={filterBy}
-                onSetFilter={onSetFilter} />
-            <ToySort sortBy={sortBy} onSetSort={onSetSort} />
-            <ToyList
-                toys={toys}
-                onRemoveToy={onRemoveToy}
-            />
-            <hr />
-        </main>
-    {/* ) */}
-{/* } */}
-    </div >
-   ) }
+            {/* ) : ( */}
+            <main className="toy-layout">
+                <ToyFilter
+                    filterBy={filterBy}
+                    onSetFilter={onSetFilter} />
+                <ToySort sortBy={sortBy} onSetSort={onSetSort} />
+                <ToyList
+                    toys={toys}
+                    onRemoveToy={onRemoveToy}
+                />
+                <hr />
+            </main>
+            {/* ) */}
+            {/* } */}
+        </div >
+    )
+}
 
 

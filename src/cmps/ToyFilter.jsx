@@ -22,7 +22,8 @@ export function ToyFilter({ onSetFilter, filterBy }) {
     return (
         <section className="toy-filter">
             <form>
-                <div className="radio-sort flex justify-center align-center">
+                <h3>Filter our toys</h3>
+                <div className="radio-sort flex">
                     <label htmlFor="all">
 
                         <input defaultChecked type="radio" name="inStock" value="all" id="all" onChange={handleChange} />
@@ -45,14 +46,15 @@ export function ToyFilter({ onSetFilter, filterBy }) {
                         value={filterByToEdit.txt}
                         onChange={handleChange}
                     />
-                 <label htmlFor="maxPrice">Max price:</label>
-                <input type="number"
-                    id="maxPrice"
-                    name="maxPrice"
-                    placeholder="By max price"
-                    value={filterByToEdit.maxPrice || ''}
-                    onChange={handleChange}
-                />
+                    <label htmlFor="maxPrice"></label>
+                    <input type="number"
+                        className="filter-input"
+                        id="maxPrice"
+                        name="maxPrice"
+                        placeholder="By max price"
+                        value={filterByToEdit.maxPrice || ''}
+                        onChange={handleChange}
+                    />
                 </div>
             </form>
         </section>

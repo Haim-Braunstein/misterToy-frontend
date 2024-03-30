@@ -1,0 +1,31 @@
+.toy-filter {
+    padding: 1em;
+    border: 0.1em solid #ddd;
+    border-radius: 0.5em;
+    background-color: #f9f9f9;
+  }
+  
+  .radio-sort {
+    gap: 0.5em;
+  }
+  
+  .radio-label {
+    font-weight: bold;
+  }
+  
+  .search-inputs {
+    margin-top: 0.5em;
+  }
+  
+  .filter-input {
+    flex: 1;
+    padding: 0.5em;
+    border: 0.1em solid #ddd;
+    border-radius: 0.5em;
+  }
+  
+  .max-price-label {
+    margin-left: 1em;
+    font-weight: bold;
+  }
+  
