@@ -11,7 +11,7 @@ export function ToyPreview({ toy, onRemoveToy }) {
             <h3 className="toy-name">{toy.name}</h3>
             <div className="toy-info">
                 <p>Price: <span>${toy.price.toLocaleString()}</span></p>
-                <img src={`https://robohash.org/${toy.name}?set=set2`} alt="" />
+                <img src={`https://robohash.org/${toy.name}?set=set3`} alt="" />
 
                 <h4>{`${toy.inStock ? 'In Stock' : 'Out of stock'}`}</h4>
             </div>

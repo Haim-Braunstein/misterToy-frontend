@@ -8,7 +8,7 @@ export function ToyDetails() {
     const navigate = useNavigate()
     const [currToy, setCurrToy] = useState(null)
     const [msgsToy, setMsgsToy] = useState([])
-    const [inputMsg, setInputMsg] = useState('');
+    const [inputMsg, setInputMsg] = useState('')
 
 
     useEffect(() => {
@@ -62,7 +62,7 @@ export function ToyDetails() {
             <div className="toy-data-container">
                 <h1>{name}</h1>
                 <p>Price: <span>${price.toLocaleString()}</span></p>
-                <img src={`https://robohash.org/${name}?set=set2`} alt="" />
+                <img src={`https://robohash.org/${name}?set=set3`} alt="" />
                 <h3>Added at: {formattedDate}</h3>
                 <h4>{`${inStock ? 'In Stock' : 'Out of stock'}`}</h4>
                 <h2>Category:</h2>

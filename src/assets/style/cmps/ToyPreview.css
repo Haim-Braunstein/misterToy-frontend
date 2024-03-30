@@ -20,7 +20,7 @@
 
 .edit-link,
 .details-link {
-    color: #1dc778;
+    color: var(--primary-1);
     text-decoration: none;
     align-items: center;
 }
@@ -36,7 +36,6 @@
     color: #dc3545;
     background-color: transparent;
     border: none;
-    cursor: pointer;
 }
 
 .remove-btn:hover {
