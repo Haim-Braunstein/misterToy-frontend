@@ -1,7 +1,11 @@
+
 import { ToyPreview } from "./ToyPreview"
 
 
-export function ToyList({ toys, onRemoveToy, onEditToy }) {
+
+export function ToyList({ toys, onRemoveToy }) {
+
+
 
     return (
         <section>
@@ -10,11 +14,11 @@ export function ToyList({ toys, onRemoveToy, onEditToy }) {
                     toys.map(toy => (
                         <li className=" clean-list" key={toy._id}>
                             <div>
-                                <ToyPreview toy={toy} />
-                                <button className="remove-btn btn" onClick={() => { onRemoveToy(toy._id) }}>X</button>
-                                <button className="remove-btn btn" onClick={() => { onEditToy(toy) }}>Edit</button>
+                                <ToyPreview toy={toy}
+                                    onRemoveToy={onRemoveToy} />
                             </div>
                         </li>
+
                     ))
                 }
             </ul>

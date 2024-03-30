@@ -43,18 +43,6 @@ export function ToyIndex() {
         setSortBy(sort)
     }
 
-    async function onEditToy(toy) {
-        const price = +prompt('New price?')
-        const toyToSave = { ...toy, price }
-    
-        try {
-            const savedToy = await saveToy(toyToSave)
-            showSuccessMsg(`Toy updated to price: ${savedToy.price}`)
-        } catch (err) {
-            showErrorMsg('Cannot update toy')
-        }
-    }
-
     if (!toys) return <h2>loading...</h2>
     return (
         <div>
@@ -72,7 +60,6 @@ export function ToyIndex() {
             <ToyList
                 toys={toys}
                 onRemoveToy={onRemoveToy}
-                onEditToy={onEditToy}
             />
             <hr />
         </main>

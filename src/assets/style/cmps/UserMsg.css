@@ -10,13 +10,11 @@
 }
 
 .user-msg.success {
-    /* background-color: var(--clr1); */
-    background-color: rgb(105, 228, 228);
+    background-color: var(--primary-1);
 }
 
 .user-msg.error {
-    /* background-color: var(--clr2); */
-    background-color: rgb(105, 228, 228);
+    background-color:var(--primary-1);
 
 }
 

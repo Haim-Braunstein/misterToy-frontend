@@ -3,7 +3,9 @@
 @import '/src/assets/style/basics/base.css';
 
 
-/* CMPS */
+/* SETUP */
+@import '/src/assets/style/setup/vars.css';
+
 /* CMPS */
 
 @import '/src/assets/style/cmps/ToyPreview.css';
