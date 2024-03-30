@@ -1,0 +1,36 @@
+.container.edit-form {
+    max-width: 25em;
+    margin: 1em auto; 
+}
+
+.edit-form div {
+    margin-bottom: 0.5em; 
+}
+
+.edit-form input,
+.edit-form select {
+    width: 100%; 
+    padding: 0.5em; 
+}
+
+.edit-form .save-toy-btn {
+
+    padding: 0.5em; 
+    background-color: var(--primary-1); 
+    color: var(--primary-base);  
+    border: none; 
+    border-radius: 0.2em; 
+}
+
+.edit-form .save-toy-btn:hover {
+    background-color: #0056b3; 
+}
+
+.edit-form input:focus,
+.edit-form select:focus {
+    outline: none; 
+    background-color: var(--primary-base); 
+    border-color: #007bff; 
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); 
+    transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+}

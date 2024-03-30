@@ -21,7 +21,7 @@
 .sort-btns button {
     padding: 0.5em 1em;
     background-color:var(--primary-1);
-    color: #fff;
+    color: var(--primary-base); 
     border: none;
     border-radius: 0.4em;
     transition: background-color 0.3s;

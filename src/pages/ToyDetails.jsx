@@ -85,7 +85,7 @@ export function ToyDetails() {
                     </form>
                 </div>
 
-                {msgs && (
+                {msgs && msgs.length > 0 && (
                     <div>
                         <h3>User message</h3>
                         {msgs.map(msg => (

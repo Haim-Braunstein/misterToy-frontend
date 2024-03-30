@@ -1,6 +1,7 @@
 .app-header {
     background-color: var(--primary-1);
-    color: #fff;
+    color: var(--primary-base); 
+
     padding: 0.625em;
     justify-content: space-between;
     align-items: center;
@@ -15,9 +16,8 @@
     margin-inline-end: 2em;
 }
 
-
 .app-header .app-nav a {
-    color: #fff;
+    color: var(--primary-base); 
     text-decoration: none;
     margin-right: 1em
 }
@@ -25,7 +25,6 @@
 .app-header .login-user {
     align-items: center;
 }
-
 
 .app-nav a:hover {
     text-decoration: underline;
@@ -37,7 +36,7 @@
 }
 
 .app-header .login-user button {
-    background-color: #fff;
+    background-color: var(--primary-base); 
     color: #333;
     border: none;
     border-radius: 0.313em;

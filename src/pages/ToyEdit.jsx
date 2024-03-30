@@ -81,7 +81,8 @@ export function ToyEdit() {
               
             </div>
             <div>
-                <select value={isInStock()} onChange={handleChange} name="inStock" className='edit-input'>
+            In stock ?
+                <select value={isInStock()} onChange={handleChange} name="inStock" className="edit-input">
                     <option value="true">Yes</option>
                     <option value="false">No</option>
                 </select>

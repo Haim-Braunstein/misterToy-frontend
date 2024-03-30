@@ -19,7 +19,7 @@
   .login-form button {
     padding: 0.625em; 
     background-color: #6fb4e1; 
-    color: #fff; 
+    color: var(--primary-base); 
     border: none; 
     border-radius: 0.313em; 
     cursor: pointer; 
