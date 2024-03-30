@@ -58,7 +58,6 @@ export function ToyIndex() {
     if (!toys) return <h2>loading...</h2>
     return (
         <div>
-            <h3>Toy Kingdom</h3>
             {/* {user && user.isAdmin ? ( */}
 
                 <>

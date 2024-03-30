@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import { toyService } from '../services/toy.service';
-import { useSelector } from 'react-redux';
-import { loadToys } from '../store/actions/toy.actions';
-import { PriceChart } from '../cmps/PriceChart';
+import { useEffect } from 'react'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
+import { Doughnut } from 'react-chartjs-2'
+import { toyService } from '../services/toy.service'
+import { useSelector } from 'react-redux'
+import { loadToys } from '../store/actions/toy.actions'
+import { PriceChart } from '../cmps/PriceChart'
 
 
 export function Dashboard() {

@@ -23,12 +23,12 @@ export function AppHeader() {
     return (
         <header className="app-header flex full main-layout">
             <section className="header-container flex">
-                <h1>Toy Kingdom</h1>
+                <h1 className="logo">Toy Kingdom</h1>
                 <nav className="app-nav flex">
                     <NavLink to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
                     <NavLink to='/toy' >Toys</NavLink>
-                    <NavLink to='/toy/dashboard' >Dashboard</NavLink>
+                    <NavLink to='/toy/dashboard' >Stats</NavLink>
 
                 </nav>
             </section>

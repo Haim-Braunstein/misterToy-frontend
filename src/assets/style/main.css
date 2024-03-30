@@ -1,6 +1,9 @@
-/* BASE */
-@import '/src/assets/style/base/helpers.css';
+/* BASICS */
+@import '/src/assets/style/basics/helpers.css';
+@import '/src/assets/style/basics/base.css';
 
+
+/* CMPS */
 /* CMPS */
 
 @import '/src/assets/style/cmps/ToyPreview.css';

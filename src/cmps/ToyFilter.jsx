@@ -40,7 +40,7 @@ export function ToyFilter({ onSetFilter, filterBy }) {
                 <div className="search-inputs">
                     <input
                         className="filter-input"
-                        placeholder="Search toy..."
+                        placeholder="What you want to buy?"
                         name="txt"
                         value={filterByToEdit.txt}
                         onChange={handleChange}
