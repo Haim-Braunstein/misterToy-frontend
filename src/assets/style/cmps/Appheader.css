@@ -52,3 +52,7 @@
     color: #555;
     text-decoration: underline;
 }
+.logo{
+    text-decoration: none;
+    color: var(--primary-base);
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
-import { login, signup } from "../store/actions/user.actions";
-import { LoginForm } from "./LoginForm";
+import { login, signup } from "../store/actions/user.actions"
+import { LoginForm } from "./LoginForm"
 
 export function LoginSignup() {
 

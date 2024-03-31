@@ -1,10 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 import { LoginSignup } from "./LoginSignup"
 import { showErrorMsg, showSuccessMsg } from "../services/event-bus.service"
 import { logout } from "../store/actions/user.actions"
-import { Home } from "@mui/icons-material"
 
 
 export function AppHeader() {
@@ -24,7 +23,7 @@ export function AppHeader() {
     return (
         <header className="app-header flex full main-layout">
             <section className="header-container flex">
-                <h1 className="logo">Toy Kingdom</h1>
+            <Link className="logo" to="/" ><h1 className="logo">Toy Kingdom</h1></Link>
                 <nav className="app-nav flex">
                     <NavLink to="/" >Home</NavLink>
                     <NavLink to="/about" >About</NavLink>
