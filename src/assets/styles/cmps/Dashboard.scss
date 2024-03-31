@@ -1,0 +1,25 @@
+.dashboard {
+
+    .charts-container {
+        gap: 5em;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+
+        .chart-heading {
+            text-align: center;
+
+            .chart {
+                flex: 1;
+                min-width: 300px;
+                max-width: 400px;
+                margin: 0.5rem;
+                height: 300px;
+            }
+
+
+        }
+
+    }
+
+}

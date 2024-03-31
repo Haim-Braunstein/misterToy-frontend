@@ -88,20 +88,22 @@ export function Dashboard() {
 
     return (
         <>
-            <h1 className='chart-heading'>Shop Stats</h1>
-            <div className=' charts-container flex'>
-                <div className="stock-chart-container" style={{ width: '400px', height: '400px' }}>
-                    <Doughnut data={data}
-                        options={options}
-                    />
+            <div className=' dashboard '>
+                <h1 className='chart-heading'>Shop Stats</h1>
+                <div className=' charts-container flex'>
+                    <div className="stock-chart-container" style={{ width: '400px', height: '400px' }}>
+                        <Doughnut data={data}
+                            options={options}
+                        />
+                    </div>
+                    <div className="price-chart-container" style={{ width: '300px', height: '300px' }}>
+                        <PriceChart
+                            toys={toys}
+                        />
+                    </div>
                 </div>
-                <div className="price-chart-container" style={{ width: '300px', height: '300px' }}>
-                    <PriceChart
-                        toys={toys}
-                    />
                 </div>
-            </div>
-        </>
-    )
+            </>
+            )
 
 }

@@ -1,6 +1,6 @@
 .app-header {
-    background-color: var(--primary-1);
-    color: var(--primary-base);
+    background-color:  $clr2;
+    color:  $clr3;
 
     padding: 0.625em;
     justify-content: space-between;
@@ -17,7 +17,7 @@
     }
 
     .app-nav a {
-        color: var(--primary-base);
+        color: $clr3;
         text-decoration: none;
         margin-right: 1em
     }
@@ -55,7 +55,7 @@
 
     .logo {
         text-decoration: none;
-        color: var(--primary-base);
+        color: $clr3;
     }
 
 }

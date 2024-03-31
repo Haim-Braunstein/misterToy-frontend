@@ -1,6 +1,12 @@
+// SETUP
+
+@import'setup/vars';
+
 // BASICS
 @import '/src/assets/styles/basics/base.scss';
+@import '/src/assets/styles/basics/helpers.scss';
 
 // CMPS
 
 @import 'cmps/Appheader';
+@import 'cmps/Dashboard.scss'

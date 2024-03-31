@@ -3,7 +3,8 @@ export function HomePage() {
 
     return (
         <section className="img-container">
-            <img className="home-img" src="img/toy-bg.jpg" />
+            {/* <img className="home-img" src="img/toy-bg.jpg" /> */}
+
             <div className="welcome-words">
             <h1>Welcome to Toy Kingdom</h1>
             <p>Toy Kingdom is your one-stop destination for all things toys! With a wide selection
