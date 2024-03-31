@@ -1,0 +1,61 @@
+.app-header {
+    background-color: var(--primary-1);
+    color: var(--primary-base);
+
+    padding: 0.625em;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .header-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    h1 {
+        margin-inline-end: 2em;
+    }
+
+    .app-nav a {
+        color: var(--primary-base);
+        text-decoration: none;
+        margin-right: 1em
+    }
+
+    .login-user {
+        align-items: center;
+    }
+
+    .app-nav a:hover {
+        text-decoration: underline;
+        color: #555;
+    }
+
+    .login-user span {
+        margin-right: 0.625em;
+    }
+
+    .login-user button {
+        background-color: var(--primary-base);
+        color: #333;
+        border: none;
+        border-radius: 0.313em;
+        cursor: pointer;
+    }
+
+    .login-user button:hover {
+        background-color: #ddd;
+    }
+
+    .app-nav a.active {
+        font-weight: bold;
+        color: #555;
+        text-decoration: underline;
+    }
+
+    .logo {
+        text-decoration: none;
+        color: var(--primary-base);
+    }
+
+}
