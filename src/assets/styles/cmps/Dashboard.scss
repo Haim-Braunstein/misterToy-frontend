@@ -1,21 +1,26 @@
 .dashboard {
 
-    .charts-container {
-        gap: 5em;
-        align-items: flex-start;
-        flex-wrap: wrap;
+    .chart-heading {
         margin-top: 1rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #333;
+        text-transform: uppercase;
+    }
+    .charts-container {
+        gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
-        .chart-heading {
-            text-align: center;
+}
 
-            .chart {
-                flex: 1;
-                min-width: 300px;
-                max-width: 400px;
-                margin: 0.5rem;
-                height: 300px;
-            }
+        .chart {
+            flex: 1 1 300px;
+            max-width: 400px;
+            margin: 0.5rem;
+            height: 300px;
         }
     }
-}
