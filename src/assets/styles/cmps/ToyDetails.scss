@@ -1,0 +1,117 @@
+.toy-details {
+    padding: 1.25em;
+
+    .toy-data-container h1 {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .toy-data-container p {
+        font-size: 1.25em;
+        margin-bottom: 0.5em;
+    }
+
+    .toy-data-container img {
+        width: 10em;
+    }
+
+    .toy-data-container h2 {
+        font-size: 1.25em;
+        margin-bottom: 0.5em;
+    }
+
+    .toy-data-container h3 {
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .toy-data-container h4 {
+        font-size: 1.25em;
+        margin-bottom: 0.5em;
+    }
+
+    .toy-data-container ul li {
+        font-size: 1.25em;
+    }
+
+    .toy-data-container button,
+    .edit-toy-details {
+        font-size: 1.25em;
+        padding: 0.5em 0.5em;
+        margin-top: 0.5em;
+    }
+
+    .toy-data-container .edit-toy-details {
+        text-decoration: none;
+        color: black;
+        border: 1px solid #ccc;
+        margin-right: 0.5em;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.msg-container {
+    margin-top: 0.3em;
+    padding: 0.3em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: auto;
+}
+
+.msg-container p {
+    font-size: 1em;
+
+}
+
+.msg-container .remove-msg-btn {
+    font-size: 1em;
+    padding: 0.25em 0.5em;
+    background-color: transparent;
+    border: none;
+    color: #dc3545;
+}
+
+.msg-container button:hover {
+    color: #bd3737;
+}
+
+.msg-input {
+    padding: 0.5em 0.75em;
+    font-size: 1em;
+    border-radius: 0.5em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.msg-input:focus {
+    border-color: #007bff;
+}
+
+.back-btn {
+    font-size: 1.25em;
+    padding: 0.5em 1em;
+    margin-top: 0.5em;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.back-btn:hover,
+.edit-toy-details:hover {
+    background-color: #e9e9e9;
+}

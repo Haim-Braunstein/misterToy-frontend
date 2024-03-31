@@ -53,7 +53,7 @@ export function ToyEdit() {
     if (!toyToEdit) return <div>Loading...</div>
 
     return (
-        <form onSubmit={onSave} className="container edit-form" action="">
+        <form onSubmit={onSave} className=" edit-form" action="">
             <div>
                 <label>
                     <span>Name</span>

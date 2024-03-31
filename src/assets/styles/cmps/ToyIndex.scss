@@ -1,0 +1,15 @@
+.toy-layout {
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .no-toys {
+        text-align: center;
+        font-weight: bold;
+        color:  $clr2;
+    }
+
+    .add-toy {
+        width: 5em;
+    }
+
+}

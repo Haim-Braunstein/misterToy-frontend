@@ -1,0 +1,32 @@
+.toy-sort {
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 0.4em;
+    background-color: #f9f9f9;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    h3 {
+        margin-bottom: 0.6em;
+    }
+
+    .sort-btns {
+        gap: 0.6em;
+        flex-direction: column;
+    }
+
+    .sort-btns button {
+        padding: 0.5em 1em;
+        background-color: $clr2;
+        color: $clr3;
+        border: none;
+        border-radius: 0.4em;
+        transition: background-color 0.3s;
+    }
+
+    .sort-btns button:hover {
+        background-color: #0056b3;
+    }
+
+}

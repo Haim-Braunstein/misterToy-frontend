@@ -1,0 +1,43 @@
+.toy-preview {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.625em;
+    border: 0.0625em solid #ccc;
+    border-radius: 0.3125em;
+    margin-bottom: 0.625em;
+    background-color: #f9f9f9;
+    width: 12em;
+    position: relative;
+
+    .toy-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0.3125em;
+    }
+
+    .edit-link,
+    .details-link {
+        color:   $clr2;
+        text-decoration: none;
+        align-items: center;
+    }
+
+    .action-btns a:hover {
+        text-decoration: underline;
+    }
+
+    .remove-btn {
+        position: absolute;
+        top: 0.3125em;
+        right: 0.3125em;
+        color: #dc3545;
+        background-color: transparent;
+        border: none;
+    }
+
+    .remove-btn:hover {
+        color: #bd3737;
+    }
+
+}
